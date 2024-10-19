@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(45deg, rgb(255, 68, 0), yellow, rgb(0, 191, 255), rgb(0, 255, 0));
+        background-size: 400% 400%;
+        animation: background_change 10s infinite ease;
+    }
+    @keyframes background_change {
+        0%{background-position: 0% 50%;}
+        50%{background-position: 100% 50%;}
+        100%{background-position: 0% 50%;}
+
+
+    }
+    .container {
+
+    border: solid rgb(133, 133, 133) 1px;
+    background-color: white;
+    display: inline-block;
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    padding-left: 100px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
+    }
+    .hoha {
+        display: inline-block;
+        padding-left: 50px;
+        position: relative;
+        bottom: 300px;
+        font-size: 30px;
+        color: rgb(186, 186, 186);
+
+    }
+    .hoa {
+        /* vertical-align: top; */
+        position: relative;
+        bottom: 300px;
+        z-index: 5;
+    }
+    .box1 {
+        position: relative;
+        display: inline-block;
+        border: solid white 5px;
+        color: white;
+        background-color: white;
+        width: 1200px;
+        height: 1500px;
+        opacity: 30%;
+        /* border-radius: 67% 33% 70% 30% / 70% 64% 36% 30% ; */
+        animation: box1 25s infinite linear;
+    }
+    @keyframes box1 {
+        0%{left: 0px;top: 0px; border-radius: 7% 93% 34% 66% / 69% 21% 79% 31% ;}
+        25%{left: 200px;top:0px;border-radius: 49% 51% 76% 24% / 67% 56% 44% 33%  ;}
+        50%{left: 0px;top: 100px;border-radius: 49% 51% 38% 62% / 53% 43% 57% 47%   ;rotate: 45deg;}
+        100%{left: 0px;top: 0px;border-radius: 7% 93% 34% 66% / 69% 21% 79% 31%;}
+    }
+    .box2 {
+        position: relative;
+        display: inline-block;
+        border: solid white 5px;
+        color: white;
+        background-color: white;
+        width: 500px;
+        height: 600px;
+        opacity: 30%;
+        /* border-radius: 67% 33% 70% 30% / 70% 64% 36% 30% ; */
+        animation: box2 25s infinite linear;
+    }
+    @keyframes box2 {
+        0%{left: 200px;bottom: 0px; border-radius: 7% 93% 34% 66% / 69% 21% 79% 31% ;}
+        25%{left: 200px;bottom:0px;border-radius: 49% 51% 76% 24% / 67% 56% 44% 33%  ;}
+        50%{left: 200px;bottom: 300px;border-radius: 49% 51% 38% 62% / 53% 43% 57% 47%   ;rotate: 45deg;}
+        100%{left: 250px;bottom: 0px;border-radius: 7% 93% 34% 66% / 69% 21% 79% 31%;}
+    }
+    .mt {
+        position: relative;
+        top: 300px;
+        left: 250px;
+        text-align: center;
+        font-size: 50px;
+        display: inline-block;
+    }
+    .mt1 {
+        animation: fp 10s infinite ease;
+    }
+
+
+    @keyframes fp {
+        0%{left: 0px;}
+        50%{left: 500px;}
+        100%{left: 500px;font-size: 100px;}
+    }
+    .mt2 {
+        left: 950px;
+        animation: lp 10s infinite ease;
+    }
+
+    @keyframes lp {
+        0%{left: 950px;}
+        50%{left: 500px;}
+        100%{left: 500px;font-size: 100px;}
+    }
+
+    /* .whitehead {
+        border: solid red 2px;
+        width: 100%;
+        height: 160px;
+        padding-left: 0px;
+    }
+    .SC {
+        padding-left: 50px;
+        padding-top: 40px;
+    }
+    .btn {
+        position: relative;
+        font-size: 20px;
+        left: 1200px;
+        bottom: 60px;
+    }
+    .tt {
+        font-size: 20px;
+        color: #777;
+        display: inline;
+        position: relative;
+        right: 50px;
+        bottom: 10px;
+        padding-left: 50px;
+    }
+    .picture {
+        width: 100%;
+        height: 300px;
+    }
+    .frame {
+        /* padding-left: 10px; */
+    /* } */
+    /* .LT {
+        display: inline-block;
+        text-align: center;
+        /* border: solid green 2px; */
+    /* } */
+    /* .LT1 {
+        font-size: 50px;
+        font-family: sans-serif;
+        padding-left: 30px;
+    }
+    .LT2 {
+        font-size: 20px;
+        font-family: sans-serif;
+        padding-left: 30px;
+    }
+    .ref{
+        position: relative;
+        left: 150%;
+        bottom: 250px;
+    }
+    .LB {
+        border: solid blue 2px;
+        background-color: #eeeeee;
+        height: 150px;
+        position: relative;
+        bottom: 50px;
+    }
+    .LB2 {
+        font-size: 25px;
+        padding-left: 35px;
+        color: #494949;
+    }
+    .SB {
+        border: solid green 2px;
+        background-color: white;
+        width: 90%;
+        height: 52.63px;
+        position: relative;
+        left: 90px;
+        bottom: 20px;
+        text-align: center;
+    }
+    .spn {
+        color: #2BB9C5;
+        font-family: Arial;
+        font-size: Medium;
+        font-weight: bold;
+    }
+    .MT2 {
+        font-family: sans-serif;
+        /* position: relative; */
+        /* text-align: center; */
+        /* padding-right: 10px; */
+        /* font-size: 40px; */
+        /* left: 820px; */
+    /* } */
+    /* .LP {
+        display: inline-block;
+        font-family: sans-serif;
+        text-align: center;
+    }
+    .FL1 {
+        vertical-align: top;
+        position: relative;
+        left: 110px;
+        /* top: 30px; */
+
+    /* } */
+    /* .FB1{
+        position: relative;
+        top: 30px; */
+    /* }
+    .FL2 { */
+        /* vertical-align: top;
+        position: relative;
+        left: 110px;
+    } */
+    /* .FL3 {
+        vertical-align: top;
+        position: relative;
+        left: 115px;
+    }
+    .FL4 { */
+        /* vertical-align: top;
+        position: relative;
+        left: 120px;
+    } */ 
+
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/6256f94c0e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="mt">
+    <p class="mt mt1">Abdullah</p>
+    <p class="mt mt2">Naseer</p>
+</div>
+<div class="container">
+    <a href="#"> <p class="hoha">Hello</p></a>
+    <!-- <a href="#"> <p class="hoha"> Home</p>  </a>
+    <a href="#"> <p class="hoha"> Services</p>  </a>
+    <a href="#"> <p class="hoha"> About us</p>  </a>
+    <a href="#"> <p class="hoha"> Contact us</p>  </a>
+    <a href="#"> <p class="hoha"> Customer Support</p>  </a>
+    <a href="#"> <p class="hoha"> Login</p>  </a> -->
+</div>
+<a href="#"> <p class="hoa">Hello</p></a>
+
+<div class="box1">
+
+</div>
+<div class="box2">
+
+</div>
+<a href="#"> <p class="hoha">Hello</p></a>
+<!-- 
+<div class="whitehead">
+    <img class="SC" src="https://smartcareers.pk/assets/img/logo.png">
+    <button class="btn">Register</button>
+    <button class="btn">Login</button>
+    <button class="btn">Test Call Letter</button>
+    <p class="tt">HOME</p>
+    <p class="tt">ABOUT US</p>
+    <p class="tt">CURRENT JOBS</p>
+    <p class="tt">PSDP JOBS</p>
+    <p class="tt">FAQS</p>
+    <p class="tt">CONTACT US</p>
+
+</div>
+
+<div class="frame">
+    <iframe class="picture" src="https://smartcareers.pk/assets/img/slide2.jpg"></iframe>
+</div>
+
+<div class="LT">
+    <p class="LT LT1">Welcome to </p>
+    <p class="LT LT1" style="color: #1a689b;"> SmartCareers.pk</p>
+    <p class="LT2">Search and apply to career oriented jobs in Karachi, Lahore and  Islamabad on SmartCareers.pk.</p>
+    <p class="LT2">Sign in with your SmartCareers.pk account and apply to the latest jobs listed below.</p>
+    <img class="ref" src="https://smartcareers.pk/assets/img/career-img1.png">
+
+</div>
+
+<div class="LB">
+    <p class="LB2"><i class="fa fa-briefcase"></i> Recent Jobs</p>
+    <div class="SB">
+        <p class="spn">No Jobs Available</p>
+    </div>
+
+</div>
+
+<div class="MT">
+    <p class="MT2">Easiest Way to Use</p>
+
+</div>
+
+<div class="LP">
+    <div  class="LP">
+        <label class="FL1">First Step</label>
+        <img class="FB1" src="https://smartcareers.pk/assets/img/infogra_01.jpg">
+    </div>
+    <div  class="LP">
+        <label class="FL2">Second Step</label>
+        <img class="FB1" src="https://smartcareers.pk/assets/img/infogra_02.jpg">
+    </div>
+    <div class="LP">    
+        <label class="FL3">Third Step</label>
+        <img class="FB1" src="https://smartcareers.pk/assets/img/infogra_03.jpg">
+    </div>
+    <div class="LP">    
+        <label class="FL4">Fourth Step</label>
+        <img class="FB1"  src="https://smartcareers.pk/assets/img/infogra_04.jpg">
+    </div>
+
+</div> -->
+<!-- <form>
+    <label>1.  What is HTML?<br>
+        <br>
+        a) HTML describes the structure of a webpage<br>
+        b) HTML is the standard markup language mainly used to create web pages<br>
+        c) HTML consists of a set of elements that helps the browser how to view the content<br>
+        d) All of the mentioned
+    </label><br><br>
+    <span>a)</span><input type="radio" name="number">
+    <span>b)</span><input type="radio" name="number">
+    <span>c)</span><input type="radio" name="number">
+    <span>d)</span><input type="radio" name="number"><br><br>
+
+    <label>2. Who is the father of HTML?<br>
+        <br>
+        a) Rasmus Lerdorf<br>
+        b) Tim Berners-Lee<br>
+        c) Brendan Eich<br>
+        d) Sergey Brin
+    </label><br><br>
+    <span>a)</span><input type="radio" name="2">
+    <span>b)</span><input type="radio" name="2">
+    <span>c)</span><input type="radio" name="2">
+    <span>d)</span><input type="radio" name="2"><br><br>
+
+    <label>3. HTML stands for __________<br>
+        <br>
+        a) HyperText Markup Language<br>
+        b) HyperText Machine Language<br>
+        c) HyperText Marking Language<br>
+        d) HighText Marking Language
+    </label><br><br>
+    <span>a)</span><input type="radio" name="1">
+    <span>b)</span><input type="radio" name="1">
+    <span>c)</span><input type="radio" name="1">
+    <span>d)</span><input type="radio" name="1"><br><br>
+</form>
+
+<form>
+    <label>Name</label>
+    <input type="text"><br>
+
+    <label>Email</label>
+    <input type="email"><br>
+
+    <label>Password</label>
+    <input type="password"><br>
+
+    <label>Profile picture</label>
+    <input type="file"><br>
+    <input type="submit" name="Upload">
+
+    <label>Gender</label>
+    <span>Male</span><input type="radio" name="gender"><br>
+    <span>Female</span><input type="radio" name="gender"><br>
+
+    <label>Country</label>
+
+    <select>
+        <option>Pakistan</option>
+        <option>India</option>
+        <option>China</option>
+    </select><br>
+
+    <label>DOB</label>
+    <input type="date"><br>
+
+</form> -->
+</body>
+
+</html>

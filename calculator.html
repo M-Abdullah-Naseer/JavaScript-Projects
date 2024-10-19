@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            background: linear-gradient(rgb(255, 112, 112), rgb(76, 76, 255));
+            height: 100vh;
+        }
+        h1, #todo_form {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 100px;
+        }
+        
+        #task_list {
+            border: solid rgb(178, 178, 178) 0.5px;
+            width: 500px;
+            background-color: rgb(178, 178, 178);
+            position: relative;
+            left: 740px;
+            list-style-type: none;
+            font-family: Arial;
+        }
+        #add_task {
+            background: linear-gradient(rgb(206, 206, 206), white);
+            border: solid grey 0.5px;
+        }
+
+        #add_task:hover {
+            opacity: 90%;
+        }
+
+        #text_input {
+            background: rgb(185, 185, 185);
+            border: none;
+        }
+        #box {
+            border: solid green 2px;
+            background-color: green;
+            width: 300px;
+            height: 50px;
+        }
+
+
+        /* body {
+            background-image: linear-gradient(rgb(208, 0, 0), rgb(123, 0, 123));
+            background-repeat: no-repeat;
+            background-position: 100%;
+            height: 100vh;
+        }
+       .numbers {
+        display: inline-block;
+        height: 80px;
+        width: 80px;
+        text-align: center;
+        border: solid rgb(204, 204, 204) 0.5px;
+        background: linear-gradient(grey, white);
+       }
+       
+       #display {
+        border: solid grey 0.5px;
+        width: 337px;
+        height: 100px;
+        text-align: center;
+        background: linear-gradient(rgb(201, 201, 201), white);
+       }
+       .numre {
+        display: block;
+       }
+       .Ln {
+        display: inline-block;
+       }
+       .centre {
+        position: relative;
+        left: 900px;
+        top: 300px;
+        height: 800px;
+        width: 800px;
+       } */
+    </style>
+</head>
+<body id="colors_hehe">
+
+<h1>TO-DO LIST</h1> 
+
+<div id="todo_form">
+
+    <input type="text" id="text_input" placeholder="Enter task">
+    
+    <button id="add_task" onclick="add_task()">add task</button>
+    <button id="remove_teak" onclick="remove_task()">Remove Task</button>
+    <button id="remove_teak" onclick="red()">Red</button>
+    <button id="remove_teak" onclick="blue()">blue</button>
+    <button id="remove_teak" onclick="green()">green</button>
+    <button id="remove_teak" onclick="yellow()">yellow</button>
+    <button id="remove_teak" onclick="purple()">purple</button>
+    <button id="om" onclick="on()">on</button>
+    <button id="off" onclick="off()">off</button>
+</div>
+
+<ul id="task_list">
+    <!-- <button id="remove_teak" onclick="remove_task()">Remove Task</button> -->
+
+</ul>
+
+<div id="box">
+
+</div>
+    
+    
+
+<!-- <div class="centre">
+
+    <div id="display">
+        
+    </div>
+    <div class="numre">
+        <div class="numbers" onclick="abc('1')">
+            1
+        </div>
+        <div class="numbers" onclick="abc('2')">
+            2
+        </div>
+        <div class="numbers" onclick="abc('3')">
+            3 
+        </div>
+        <div class="numbers" onclick="abc('+')">
+            + 
+        </div>
+    </div>
+    <div class="numre">
+        <div class="numbers" onclick="abc('4')">
+            4 
+        </div>
+        <div class="numbers" onclick="abc('5')">
+            5
+        </div>
+        <div class="numbers" onclick="abc('6')">
+            6 
+        </div>
+        <div class="numbers" onclick="abc('-')">
+            - 
+        </div>
+    </div>
+    <div class="numre">
+        <div class="numbers" onclick="abc('7')">
+            7
+        </div>
+        <div class="numbers" onclick="abc('8')">
+            8
+        </div>
+        <div class="numbers" onclick="abc('9')">
+            9 
+        </div>
+        <div class="numbers" onclick="abc('*')">
+            * 
+        </div>
+    </div>
+    <div class="Ln">
+        <div class="numbers Ln" onclick="abc('0')">
+            0
+        </div>
+        <div class="numbers Ln" onclick="abc('/')">
+            /
+        </div>
+        <div id="clear" class="numbers Ln" onclick="clear_screen()">
+            AC
+        </div>
+        <div id="result" class="numbers Ln" onclick="calculate()">
+            =
+        </div>
+    </div>
+</div>
+
+<div > -->
+
+<!-- </div> -->
+
+
+<script>
+    let task_input = document.getElementById("text_input")
+    let task_list = document.getElementById("task_list")
+
+    function add_task() {
+        let task_input_text = task_input.value.trim();
+        let li = document.createElement("li")
+        li.textContent = task_input_text;
+        task_list.appendChild(li)
+    }
+    function remove_task() {
+        task_list.removeChild(task_list.lastChild)
+    }
+
+    function red() {
+        let colour = document.getElementById("colors_hehe")
+        colour.style.background = "red"
+    }
+    function green() {
+        let colour = document.getElementById("colors_hehe")
+        colour.style.background = "green"
+    }
+    function blue() {
+        let colour = document.getElementById("colors_hehe")
+        colour.style.background = "blue"
+    }
+    function yellow() {
+        let colour = document.getElementById("colors_hehe")
+        colour.style.background = "yellow"
+    }
+    function purple() {
+        let colour = document.getElementById("colors_hehe")
+        colour.style.background = "purple"
+    }
+
+    function on() {
+        let colour = document.getElementById("box")
+        colour.style.display = "block"
+    }
+
+    function off() {
+        let colour = document.getElementById("box")
+        colour.style.display = "none"
+    }
+    // function abc(value) {
+
+    //     let display = document.getElementById("display");
+
+    //     let content = display.textContent;
+
+    //     content = content + value;
+
+    //     display.innerHTML = content;
+
+    // }
+
+    // function clear_screen() {
+
+    // document.getElementById("display").innerHTML = "";
+
+    // }
+
+    // function calculate() {
+
+    // let display_screen = document.getElementById("display");
+
+    // let expression = display_screen.textContent;
+
+    // let result = eval(expression);
+
+    // display_screen.innerHTML = result
+
+    // }
+</script>
+
+</body>
+</html>
