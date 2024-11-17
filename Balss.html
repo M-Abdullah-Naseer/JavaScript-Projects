@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            position: relative;
+            cursor: pointer;
+        }
+        /* .ball{
+            background-color: red;
+            color: red;
+            height: 30px;
+            width: 30px;
+            border-radius: 15px;
+
+            animation: bell 5s ease-in forwards;
+        }
+
+        @keyframes bell{
+            to {
+                transform: translateY(calc(100vh - 15px));
+            }
+        } */
+
+        .ball {
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            animation: fall 2s ease-in forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(calc(100vh - 30px));
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <script>
+        document.body.addEventListener('click', function (event) {
+            let hehe = document.createElement('div')
+            hehe.classList.add('ball');
+
+            hehe.style.left = event.clientX - 15 + 'px';
+            hehe.style.top = event.clientY - 15 + 'px';
+
+            document.body.appendChild(hehe)
+
+        });
+    </script>
+</body>
+</html>

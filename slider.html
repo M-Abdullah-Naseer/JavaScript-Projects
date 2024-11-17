@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    .header1 {
+        height: 100vh;
+    }
+    .header2 {
+        height: 100vh;
+        position: relative;
+        top: 300px;
+        width: 2000px;
+
+    }
+</style>
+</head>
+<body>
+    <div id="count">
+        <button onclick="next()">next</button>
+        <button onclick="previos()">previous</button>
+        <div id="asd">
+            <img id="hello" src="https://www.swiftpublisher.com/assets/img/articles/psychology-of-colors/color-theory-wheel@2x.png">
+        </div>
+        <!-- <div id="2"></div>
+        <div id="3"></div> -->
+    </div>
+
+
+<script>
+    function next(){
+        let inside = document.getElementById('hello')
+
+        inside.src = 'https://cdn.britannica.com/70/191970-131-A85628DA/Color-wheel-light-color-spectrum.jpg'
+
+
+    }
+</script>
+</body>
+</html>

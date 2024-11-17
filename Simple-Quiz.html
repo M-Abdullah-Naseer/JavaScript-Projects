@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <h2>Java Quiz</h2>
+<style>
+    body{
+        background-color: crimson;
+        text-align: center;
+    }
+    .quiz_container{
+        text-align: center;
+        border: solid rgb(1, 141, 141) 1px;
+        border-radius: 20px;
+        background-color: aqua;
+        width: 600px;
+        height: 160px;
+        position: relative;
+        left: 175px;
+    }
+    .question {
+        height: 40px;
+    }
+    .answers label{
+        display: block;
+    }
+</style>
+</head>
+<body>
+<div class="quiz_container">
+    <div class="question" id="question"></div>
+    <div class="answers" id="answers">
+        <label><input type="radio" name="answer">A</label>
+        <label><input type="radio" name="answer">B</label>
+        <label><input type="radio" name="answer">C</label>
+        <label><input type="radio" name="answer">D</label>
+    </div>
+    <div>
+        <button id="previous_btn" onclick="previous()">Previous Question</button>
+        <button id="next_btn" onclick="next()">Next Question</button>
+        <button id="submit_btn" onclick="" style="display: none;">Submit Question</button>
+    </div>
+
+</div>
+<script>
+    let quiz_data = [
+        {
+            question: "What is JavaScript?",
+            answers: ["JavaScript is a scripting language used to make the website interactive","JavaScript is an assembly language used to make the website interactive","JavaScript is a compiled language used to make the website interactive","None of the mentioned"],
+            correctAnswer: "JavaScript is a scripting language used to make the website interactive"
+        },
+        {
+            question: "What is JavaScript 1?",
+            answers: ["JavaScript is a scripting language used to make the website interactive","JavaScript is an assembly language used to make the website interactive","JavaScript is a compiled language used to make the website interactive","None of the mentioned"],
+            correctAnswer: "JavaScript is a scripting language used to make the website interactive"
+        },
+        {
+            question: "What is JavaScript? 2",
+            answers: ["JavaScript is a scripting language used to make the website interactive","JavaScript is an assembly language used to make the website interactive","JavaScript is a compiled language used to make the website interactive","None of the mentioned"],
+            correctAnswer: "JavaScript is a scripting language used to make the website interactive"
+        },
+        {
+            question: "What is JavaScript? 3",
+            answers: ["JavaScript is a scripting language used to make the website interactive","JavaScript is an assembly language used to make the website interactive","JavaScript is a compiled language used to make the website interactive","None of the mentioned"],
+            correctAnswer: "JavaScript is a scripting language used to make the website interactive"
+        },
+        {
+            question: "What is JavaScript? 4",
+            answers: ["JavaScript is a scripting language used to make the website interactive","JavaScript is an assembly language used to make the website interactive","JavaScript is a compiled language used to make the website interactive","None of the mentioned"],
+            correctAnswer: "JavaScript is a scripting language used to make the website interactive"
+        }
+    ]
+
+    let current_question = 0
+    let user_answer = new Array(quiz_data.length).fill(null)
+
+    function load_questions() {
+
+        let question_data = quiz_data[current_question];
+
+        document.getElementById("question").innerHTML = question_data.question;
+
+        let answer_labels = document.getElementById("answers").getElementsByTagName("label");
+
+        for(let i=0; i < answer_labels.length; i++) {
+
+            answer_labels[i].innerHTML = '<input type="radio" name="answer" value="' + i +'">' + question_data.answers[i];
+
+        }
+
+        document.getElementById("previous_btn").disabled = (current_question === 0)
+
+        if (current_question === quiz_data.length - 1) {
+            document.getElementById("next_btn").style.display = "none"
+            document.getElementById("submit_btn").style.display = "inline"
+        } else {
+            document.getElementById("next_btn").style.display = "inline"
+            document.getElementById("submit_btn").style.display = "none"
+        }
+
+    }
+
+
+    function next() {
+        let selected = document.querySelector('input[name:"answer"]:checked');
+
+        if(selected) {
+            user_answer[current_question] = parseInt(selected.value)
+        }
+
+        if (current_question < quiz_data.length - 1) {
+            current_question++;
+            load_questions()
+        }
+    }
+
+    function previous() {
+        let selected = document.querySelector('input[name:"answer"]:checked');
+        
+        if(selected) {
+            user_answer[current_question] = parseInt(selected.value)
+        }
+
+        if (current_question > 0) {
+            current_question--;
+            load_questions()
+        }
+    }
+
+    function load_questions() { 
+
+        let question_data = quiz_data[current_question];
+
+        document.getElementById("question").innerHTML = question_data.question;
+
+        let answer_labels = document.getElementById("answers").getElementsByTagName("label");
+
+        for(let i=0; i < answer_labels.length; i++) {
+
+            answer_labels[i].innerHTML = '<input type="radio" name="answer" value="' +i+'">' + question_data.answers[i];
+
+        }
+    }
+
+
+
+
+    window.onload = load_questions
+
+                
+
+</script>
+
+
+</body>
+</html>

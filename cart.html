@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <h1>SuperStore</h1>
+    <h2>Items: Food</h2>
+<style>
+    body {
+        background-image: linear-gradient(rgb(172, 172, 172));
+        height: 100vh;
+    }
+
+    h1 {
+        font-size: 50px;
+        /* border: solid red 2px; */
+        text-align: center;
+    }
+
+    h2 {
+        position: relative;
+        top: 60px;
+        font-size: 40px;
+    }
+    #first_container{
+        /* border: solid rgb(25, 0, 255) 2px; */
+        height: 30px;
+        display: block;
+        margin-bottom: 10px;
+        width: 300px;
+        font-size: 20px;
+        background-color: rgb(172, 172, 172);
+        text-align: center;
+        padding-top: 10px;
+        position: relative;
+        bottom: 20px;
+    }
+
+    .bor {
+        /* border: solid green 2px; */
+        margin-left: 8px;
+        text-align: right;
+    }
+    /* .first {
+        border: solid green 1px;
+        background-color: green;
+        display: inline-block;
+        height: 70px;
+        width: 70px;
+        margin-left: 20px;
+        margin-top: 10px;
+    } */
+    .counter{
+        /* border: solid blue 2px ;  */
+        text-align: center;
+        height: 30px;
+        width: 30px;
+        position: relative;
+        left: 1800px;
+        display: inline-block;
+        font-size: 50px;
+    }
+    #Random {
+        border: solid black 2px;
+        position: relative;
+        width: 350px;
+        left: 1500px;
+        height:300px;
+        overflow-y: scroll;
+        display: none;
+        background-color: rgb(172, 172, 172);
+    }
+
+    .random_ani {
+        animation-name: e_box;
+        animation-duration: 3s;
+    }
+
+    .random2_ani {
+        animation-name: t_box;
+        animation-duration: 3s;
+    }
+
+    @keyframes e_box {
+        0%{left: 0;}
+        100%{left: 1500px;}
+    }
+
+    @keyframes t_box {
+        0%{left: 0;}
+        100%{left: 1500px;}
+    }
+
+    #hello {
+        border: solid black 2px;
+        position: relative;
+        width: 200px;
+        left: 1500px;
+        height:20px;
+        display: none;
+        background-color: rgb(172, 172, 172);
+    }
+
+    #Random span:nth-child(2) {
+        float: right;
+    }
+
+    #Random span:nth-child(3) {
+        float: right;
+    }
+    .onic {
+        height: 19.5px;
+        margin-left: 8px;
+        text-align: right;
+    }
+</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div id="counter">
+    <div class="counter"><i class="fas fa-shopping-cart" onclick="display_block()"></i><span>0</span></div>
+</div>
+
+<div id="first_container">
+    <span class="bor">Rice   </span>
+    <span class="bor">   200</span>
+    <button  class="onic bor" onclick="CC(this)"><i class="fas fa-shopping-cart"></i>Clickme</button>
+
+</div>
+<div id="first_container">
+    <span class="bor">Milk   </span>
+    <span class="bor">   280</span>
+    <button class="onic bor" onclick="CC(this)"><i class="fas fa-shopping-cart"></i>Clickme</button>
+
+</div>
+<div id="first_container">
+    <span class="bor ">Chocolate  </span>
+    <span class="bor">   80</span>
+    <button class="onic bor" onclick="CC(this)"><i class="fas fa-shopping-cart"></i>Clickme</button>
+
+</div>
+
+<div id="first_container">
+    <span class="bor ">Oil  </span>
+    <span class="bor">   400</span>
+    <button class="onic bor" onclick="CC(this)"><i class="fas fa-shopping-cart"></i>Clickme</button>
+
+</div>
+<div id="first_container">
+    <span class="bor ">salt  </span>
+    <span class="bor">   120</span>
+    <button class="onic bor" onclick="CC(this)"><i class="fas fa-shopping-cart"></i>Clickme</button>
+
+</div>
+<div id="first_container">
+    <span class="bor ">Frozen Pizza  </span>
+    <span class="bor">   250</span>
+    <button class="onic bor" onclick="CC(this)"><i class="fas fa-shopping-cart"></i>Clickme</button>
+
+</div>
+
+<div id="Random">
+    
+</div>
+<div id="hello">
+    <span>Your Total Bill is: </span>
+    <span>0</span>
+    <span>0</span>
+</div>
+
+<script>
+    let total = document.getElementById('hello')
+    let a = document.getElementById('counter')
+    let b = a.getElementsByTagName("span")[0];
+    let random = document.getElementById('Random')
+// let boom = random.getElementsByTagName('span')[0]
+
+    function CC(btn_add) {
+        let z = parseInt(b.textContent)
+        z = z + 1
+        b.innerHTML = z
+
+        let btn_access = btn_add.parentElement;
+        let item_access = btn_access.getElementsByTagName('span')[0].textContent
+        let item_price_access = btn_access.getElementsByTagName('span')[1].textContent
+        let v = parseInt(item_price_access)
+        let span_1 = document.createElement('span')
+
+
+        let span_one = document.createElement('span')
+        let span_two = document.createElement('span')
+
+        var c = document.createElement('br')
+
+        
+
+
+        span_one.innerHTML = item_access;
+        span_two.innerHTML = item_price_access;
+        
+        let price_itm = document.createElement("div")
+
+        price_itm.className = "itm_p" 
+
+        let cross_btn = document.createElement("button")
+        cross_btn.setAttribute('onclick', 'flush_all(this)')
+        cross_btn.className = 'hemlo'
+        cross_btn.style.float = 'right'
+        cross_btn.style.height = '18px'
+        cross_btn.style.background = 'red'
+        cross_btn.style.width = '25px'
+        cross_btn.style.textAlign = 'centre'
+
+        cross_btn.style.margin = 'left'
+
+        cross_btn.innerHTML = 'X'
+
+        price_itm.appendChild(span_one)
+        
+        price_itm.appendChild(cross_btn)
+        price_itm.appendChild(span_two)
+
+        
+
+        random.appendChild(price_itm)
+        // random.appendChild(c)
+        let u = document.getElementById('hello')
+        let price_prod = u.getElementsByTagName('span')[1]
+        let Total_add = parseInt(price_prod.textContent)
+
+        Total_add = Total_add + v
+
+        price_prod.innerHTML = Total_add
+
+    }
+
+    function flush_all(bbtn_address){
+
+        let z = parseInt(b.textContent)
+        z = z - 1
+        b.innerHTML = z
+
+        let u = document.getElementById('hello') 
+        let price_prod = u.getElementsByTagName('span')[1]
+        let p_add = parseInt(price_prod.textContent)
+
+        let k = bbtn_address.parentElement
+
+        let v = k.getElementsByTagName('span')[1]
+        let removed_price = parseInt(v.textContent)
+
+        p_add = p_add - removed_price
+
+        price_prod.innerHTML = p_add
+
+        k.remove()
+    }
+
+    function display_block(){
+        let for_prods = document.getElementById('Random')
+        for_prods.className = 'random_ani'
+        let for_total = document.getElementById('hello')
+        for_total.className = 'random2_ani'
+        for_prods.style.display = 'block'
+        for_total.style.display = 'block'
+
+    }
+
+
+
+
+</script>
+</body>
+</html>
